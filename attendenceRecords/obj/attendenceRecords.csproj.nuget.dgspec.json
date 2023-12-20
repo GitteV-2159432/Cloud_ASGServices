@@ -1,0 +1,74 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj",
+        "projectName": "attendenceRecords",
+        "projectPath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj",
+        "packagesPath": "C:\\Users\\Gitte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Gitte\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "soapcore": {
+              "target": "Package",
+              "version": "[1.1.0.39, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.415\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
