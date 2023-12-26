@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use Illuminate\Support\Facades\DB;
+use RicorocksDigitalAgency\Soap\Facades\Soap;
 
 class MemberController extends Controller
 {

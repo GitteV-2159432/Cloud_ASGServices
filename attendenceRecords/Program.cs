@@ -22,7 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseSoapEndpoint<IAttendenceRecordsService>("/Service.asmx", new SoapEncoderOptions());
+app.UseSoapEndpoint<IAttendenceRecordsService>("/attendance.asmx", new SoapEncoderOptions());
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

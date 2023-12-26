@@ -24,5 +24,11 @@ public interface IAttendenceRecordsService
     List<Activity> GetActivitiesOnDate(DateTime date);
 
     [OperationContract]
-    List<Activity> GetActivitiesOfMember(string name);    
+    List<Activity> GetActivitiesOfMember(string name);  
+
+    [OperationContract]
+    void AddSamples(int amount);
+
+    [OperationContract]
+    List<Member> GetMembers();
 }

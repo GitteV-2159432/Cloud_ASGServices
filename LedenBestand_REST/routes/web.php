@@ -21,4 +21,7 @@ Route::get('/', function () {
 Route::get('leden',[MemberController::class,"index"]);
 Route::get('/voegToe', [MemberController::class, "create"]);
 Route::post('/toegevoegdLid', [MemberController::class, "store"]);
+
+
 Route::get('/{id}', [MemberController::class, "show"]);
+

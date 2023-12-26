@@ -1,13 +1,20 @@
+using System.CodeDom;
+using System.Text;
 using Models;
 namespace attendenceRecords.Models;
 
 public class AttendenceRecordsService : IAttendenceRecordsService
 {
     private List<Member> members = new List<Member>();
-     private List<Activity> activities = new List<Activity>();
-
+    private List<Activity> activities = new List<Activity>();
+    public AttendenceRecordsService(){
+        AddSamples(6);
+    }
     public void AddMember(string name){
-        members.Add(new Member{Name = name, AttendedActivities=new List<Activity>()});
+        var member = members.FirstOrDefault(a=>a.Name == name);
+        if(member == null){
+            members.Add(new Member{Name = name, AttendedActivities=new List<Activity>()});
+        }
     }
 
     public double getAttendancePercentage(string name){
@@ -55,4 +62,51 @@ public class AttendenceRecordsService : IAttendenceRecordsService
         return new List<Activity>();
     }
 
-}    
+
+
+    private List<Member> AddSampleMembers(int numberOfUsers)
+    {
+        for (int i = 1; i == numberOfUsers; i++)
+        {
+            string name = "Member"+i;
+            var member = members.FirstOrDefault(a=>a.Name == name);
+            if(member == null){
+                members.Add(new Member{Name = name, AttendedActivities=new List<Activity>()});
+            }
+        }
+        return members;
+    }
+
+    private void AddSampleActivities(int numberOfActivities)
+    {
+        for (int i = 0; i < numberOfActivities; i++)
+        {
+            Random random = new();
+            string actName = "Activity" +i;
+            double price = Math.Round(random.NextDouble() * 10);
+            List<Member> attendees = members;
+
+            var activity = new Activity
+            {
+                Name=actName,
+                Date= DateTime.Now,
+                Price=price,
+                Attendees=attendees
+            };
+            activities.Add(activity);
+        }
+    }
+    public void AddSamples(int amount){
+        AddSampleMembers(25);
+        AddSampleActivities(amount);
+    }
+
+    public List<Member> GetMembers(){
+        for (int i=0; i<members.Count; i++){
+            Console.WriteLine(members[i]);
+        }
+        Console.WriteLine("GetMembers");
+        return members;
+    }
+}
+  

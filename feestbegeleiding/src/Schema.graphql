@@ -1,0 +1,39 @@
+"https://www.apollographql.com/docs/apollo-server/schema/schema"
+
+
+type Query{
+    "Get all people"
+    people: [Person]!
+
+    "Get all verenigingen"
+    verenigingen: [Vereniging]!
+
+    "Get all events where there was feestbegeleiding"
+    feestbegeleiding: [Feestbegeleiding]!
+
+    "Get all events where a specific Vereniging did feestbegeleiding"
+    filterFeestbegeleidingVereniging(verenigingName: String): [Feestbegeleiding]!
+
+    "Get all events where a specific Person did feestbegeleiding"
+    filterFeestbegeleidingPerson(personName: String): [Feestbegeleiding]!
+}
+
+
+type Person{
+    name: String!
+    vereniging: Vereniging!
+    feestbegeleiding: [Feestbegeleiding]!
+}
+
+type Vereniging{
+    name: String!
+    members: [Person!]
+    feestbegeleiding: [Feestbegeleiding]!
+}
+
+type Feestbegeleiding{
+    id: ID!
+    nameEvent: String!
+    firstShift: Person!
+    secondShift: Person!
+}
