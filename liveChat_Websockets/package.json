@@ -1,0 +1,10 @@
+{
+    "name": "liveChat",
+    "version": "0.0.1",
+    "description": "chat service",
+    "dependencies": {
+        "express": "latest",
+        "socket.io": "^4.7.2"
+    },
+    "author": "Gitte Vandevenne"
+}

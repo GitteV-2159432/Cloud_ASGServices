@@ -1,0 +1,161 @@
+<!-- client.html -->
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Live Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #badaf2;
+        }
+
+  
+        #messages {
+          height: 300px;
+          overflow-y: scroll;
+          margin-bottom: 15px;
+          display: flex;
+          flex-direction: column;
+        }
+  
+        li {
+          margin-bottom: 10px;
+        }
+  
+        #form {
+          display: flex;
+          margin-bottom: 10px;
+        }
+  
+        #input {
+          flex: 1;
+          padding: 5px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+        }
+  
+        button {
+          padding: 5px 10px;
+          background-color: #0B5351;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+  
+        button:hover {
+          background-color: #00A9A5;
+        }
+
+        .speech-bubble {
+        position: relative;
+        background: #f1f1f1;
+        border-radius: 1em;
+        width: fit-content;
+        padding: 10px;
+        color: #000;
+        margin-bottom: 10px;
+      }
+
+      .speech-bubble:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-right-color: #f1f1f1;
+        border-left: 0;
+        border-bottom: 0;
+        margin-top: -10px;
+        margin-left: -20px;
+      }
+
+      .speech-bubble-align-right {
+            position: absolute;
+            right: 50px;
+            background: #f1f1f1;
+            border-radius: 1em;
+            width: fit-content;
+            padding: 10px;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+      .speech-bubble-align-right:after{
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #f1f1f1;
+        border-right: 0;
+        border-bottom: 0;
+        margin-top: -10px;
+        margin-right: -20px;
+      }
+
+
+    </style>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        var socket = io();
+        
+        // Get the username from the client when they join
+        var username = prompt("Enter your username:");
+        socket.username = username;
+        socket.emit('user_join', username);
+
+        socket.on('connect', () => {
+          console.log('Connected to server!');
+        });
+
+        socket.on('message', (data) => {
+          var li = document.createElement('li');
+          var bubble = document.createElement('div');
+
+          if(data.username == socket.username){
+            bubble.className = 'speech-bubble-align-right';
+            bubble.style.border-left-color ==  data.color;
+          }else{
+            bubble.className = 'speech-bubble';
+          }
+          bubble.style.background = data.color;
+          bubble.textContent = data.message;
+          li.appendChild(bubble);
+          document.getElementById('messages').appendChild(li);
+        });
+
+        socket.on('user_join', (username) => {
+          console.log(username);
+        });
+        
+        document.getElementById('form').addEventListener('submit', (e) => {
+          e.preventDefault();
+          var message = document.getElementById('input').value;
+          socket.emit('message', socket.username + ': ' + message);
+          document.getElementById('input').value = '';
+        });
+      });
+    </script>
+ </head>
+ <body>
+    <h1>Welcome to the Live Chat!</h1>
+    <ul id="messages"></ul>
+    <form id="form">
+      <input id="input" type="text" placeholder="Enter your message here" />
+      <button type="submit">Send</button>
+    </form>
+ </body>
+</html>
+
+
+
+    
