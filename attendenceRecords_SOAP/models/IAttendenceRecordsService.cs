@@ -5,30 +5,30 @@ namespace Models;
 [ServiceContract]
 public interface IAttendenceRecordsService
 {
+    
     [OperationContract]
-    double getAttendancePercentage(string name);
+    List<string> GetAttendees(string activityName);
 
     [OperationContract]
-    List<Member> GetAttendees(Activity activity);
+    void AddActivity(string name, DateTime date, double price, List<string> attendees);
 
     [OperationContract]
-    void AddActivity(string name, DateTime date, double price, List<Member> attendees);
+    List<string> GetMembers();
+
+    
+    [OperationContract]
+    List<Activity> GetActivities();
+    
+    [OperationContract]
+    DateTime GetActivityDate(string activityName);
 
     [OperationContract]
-    void AddMember(string name);
+    double GetActivityPrice(string activityName);
 
     [OperationContract]
-    List<Activity> GetActivitiesWithPrice(double price);
+    double GetAttendancePercentage(string name);
 
     [OperationContract]
-    List<Activity> GetActivitiesOnDate(DateTime date);
+    int ActivitiesAttended(string name);
 
-    [OperationContract]
-    List<Activity> GetActivitiesOfMember(string name);  
-
-    [OperationContract]
-    void AddSamples(int amount);
-
-    [OperationContract]
-    List<Member> GetMembers();
 }

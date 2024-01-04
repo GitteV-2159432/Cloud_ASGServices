@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sX4hPBnvLggHnF103NOt6rkjL4mFyb0QQwhYQ9plQ6YLGZKLG/1/pElHtBFhCkxiVjB0OS6SpckK9YUWkGstoQ==",
+  "dgSpecHash": "QnmdglEeEAmSN1yApEoPEDvCED+j4lNdyTYMT5K0RarZUPGPB3dDVQWq8LNdHq3LfxbMuLip/vbKv8uKtbu6SA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj",
+  "projectFilePath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords_SOAP\\attendenceRecords.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gitte\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Gitte\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

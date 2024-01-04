@@ -1,13 +1,15 @@
 using System.Runtime.Serialization;
 
-namespace attendenceRecords.Models
-{
+namespace Models{
+    
     [DataContract]
-    public class Member
+    public class Activity
     {
         [DataMember]
         public string Name {get; set;}
         [DataMember]
-        public List<Activity> AttendedActivities {get; set;}
+        public DateTime Date {get; set;}
+       [DataMember]
+        public double Price {get; set;}
     }
 }

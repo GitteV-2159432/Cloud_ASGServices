@@ -11,6 +11,6 @@ namespace attendenceRecords.Models{
        [DataMember]
         public double Price {get; set;}
         [DataMember]
-        public List<Member>? Attendees {get; set;}
+        public List<string> Attendees {get; set;}
     }
 }

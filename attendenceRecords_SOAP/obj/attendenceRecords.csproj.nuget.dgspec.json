@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj": {}
+    "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords_SOAP\\attendenceRecords.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj": {
+    "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords_SOAP\\attendenceRecords.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj",
+        "projectUniqueName": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords_SOAP\\attendenceRecords.csproj",
         "projectName": "attendenceRecords",
-        "projectPath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\attendenceRecords.csproj",
+        "projectPath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords_SOAP\\attendenceRecords.csproj",
         "packagesPath": "C:\\Users\\Gitte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords\\obj\\",
+        "outputPath": "C:\\Users\\Gitte\\Documents\\CloudComputing\\Cloud_ASGServices\\attendenceRecords_SOAP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gitte\\AppData\\Roaming\\NuGet\\NuGet.Config"

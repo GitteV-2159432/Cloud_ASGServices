@@ -1,112 +1,107 @@
-using System.CodeDom;
-using System.Text;
 using Models;
 namespace attendenceRecords.Models;
 
 public class AttendenceRecordsService : IAttendenceRecordsService
 {
-    private List<Member> members = new List<Member>();
-    private List<Activity> activities = new List<Activity>();
-    public AttendenceRecordsService(){
-        AddSamples(6);
-    }
-    public void AddMember(string name){
-        var member = members.FirstOrDefault(a=>a.Name == name);
-        if(member == null){
-            members.Add(new Member{Name = name, AttendedActivities=new List<Activity>()});
-        }
-    }
+    private static Dictionary<string, List<Activity>> memberActivities = new();
+    private int totalActivities = 0;
 
-    public double getAttendancePercentage(string name){
-        var member = members.FirstOrDefault(a=>a.Name==name);
-        if(member != null){
-            int attended = member.AttendedActivities.Count;
-            int total = activities.Count;
-            return attended/total *100;
+
+    public double GetAttendancePercentage(string name){
+        if(!memberActivities.ContainsKey(name)){
+            return 0.0;
         }
-        return 0.0;
+        int activities = memberActivities[name].Count;
+        double percentage = (activities/totalActivities)*100;
+        return percentage;
     }
     
-    public List<Member> GetAttendees(Activity activity){
-        return new List<Member>();
-    }
 
-    public void AddActivity(string name, DateTime date, double price, List<Member> attendees){
-        var activity = new Activity{Name=name, Date=date, Price=price, Attendees=attendees};
-        activities.Add(activity);
+
+    public void AddActivity(string name, DateTime date, double price, List<string> attendees){
+        var activity = new Activity{
+            Name=name, 
+            Date=date, 
+            Price=price, 
+            Attendees=attendees
+        };
+
         foreach(var attendee in attendees){
-            var attendeeName = attendee.Name;
-            var member = members.FirstOrDefault(a=>a.Name == attendeeName);
-            if(member != null){
-                member.AttendedActivities.Add(activity);
-            }else{
-                var attendedActivities = new List<Activity>{activity};
-                members.Add(new Member{Name = name, AttendedActivities=attendedActivities});
+            if(!memberActivities.ContainsKey(attendee)){
+                memberActivities[attendee] = new List<Activity>();
             }
+            memberActivities[attendee].Add(activity);
         }
+        totalActivities = totalActivities + 1;
     }
-
-    public List<Activity> GetActivitiesWithPrice(double price){
-        return activities.Where(a => a.Price == price).ToList();
-    }
-
-    public List<Activity> GetActivitiesOnDate(DateTime date){
-        return activities.Where(a => a.Date == date).ToList();
-    }
+   
 
     public List<Activity> GetActivitiesOfMember(string name){
-        var member = members.FirstOrDefault(a=>a.Name==name);
-        if(member != null){
-            return member.AttendedActivities;
-        }
-        return new List<Activity>();
+        return memberActivities[name];
     }
 
+  
 
+    public List<string> GetMembers(){
+        List<string> members = new List<string>();
+        foreach(KeyValuePair<string, List<Activity>> pair in memberActivities){
+            members.Add(pair.Key);
+        }
+        return members;
+    }
 
-    private List<Member> AddSampleMembers(int numberOfUsers)
-    {
-        for (int i = 1; i == numberOfUsers; i++)
-        {
-            string name = "Member"+i;
-            var member = members.FirstOrDefault(a=>a.Name == name);
-            if(member == null){
-                members.Add(new Member{Name = name, AttendedActivities=new List<Activity>()});
+    public List<Activity> GetActivities(){
+        List<Activity> activities = new List<Activity>();
+        foreach(KeyValuePair<string, List<Activity>> pair in memberActivities){
+            foreach(Activity activity in pair.Value){
+                if(!activities.Contains(activity)){
+                    activities.Add(activity);
+                }
             }
         }
-        return members;
+        return activities;
     }
 
-    private void AddSampleActivities(int numberOfActivities)
-    {
-        for (int i = 0; i < numberOfActivities; i++)
-        {
-            Random random = new();
-            string actName = "Activity" +i;
-            double price = Math.Round(random.NextDouble() * 10);
-            List<Member> attendees = members;
-
-            var activity = new Activity
-            {
-                Name=actName,
-                Date= DateTime.Now,
-                Price=price,
-                Attendees=attendees
-            };
-            activities.Add(activity);
+    public int ActivitiesAttended(string name){
+         if(!memberActivities.ContainsKey(name)){
+            return 0;
         }
-    }
-    public void AddSamples(int amount){
-        AddSampleMembers(25);
-        AddSampleActivities(amount);
+        int activities = memberActivities[name].Count;
+        return activities;
     }
 
-    public List<Member> GetMembers(){
-        for (int i=0; i<members.Count; i++){
-            Console.WriteLine(members[i]);
+    private Activity FindActivity(string activityName){
+        foreach(string key in memberActivities.Keys){
+            foreach(Activity activity in memberActivities[key]){
+                if(activity.Name == activityName){
+                    return activity;
+                }
+            }
         }
-        Console.WriteLine("GetMembers");
-        return members;
+        return null;
     }
-}
-  
+
+    public List<string> GetAttendees(string activityName){
+        Activity activity = FindActivity(activityName);
+        List<string> attendees = new List<string>();
+        foreach(KeyValuePair<string, List<Activity>> pair in memberActivities){
+            if(pair.Value.Contains(activity)){
+                attendees.Add(pair.Key);
+            }
+        }
+        return attendees;
+    }
+
+    public DateTime GetActivityDate(string activityName){
+        Activity activity = FindActivity(activityName);
+
+        return activity.Date;
+    }
+
+    
+    public double GetActivityPrice(string activityName){
+        Activity activity = FindActivity(activityName);
+
+        return activity.Price;
+    }
+} 
