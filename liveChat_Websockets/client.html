@@ -23,6 +23,7 @@
   
         li {
           margin-bottom: 10px;
+          list-style: none;
         }
   
         #form {
@@ -76,15 +77,15 @@
       }
 
       .speech-bubble-align-right {
-            position: absolute;
-            right: 50px;
-            background: #f1f1f1;
-            border-radius: 1em;
-            width: fit-content;
-            padding: 10px;
-            color: #000;
-            margin-bottom: 10px;
-        }
+        position: absolute;
+        right: 50px;
+        background: #f1f1f1;
+        border-radius: 1em;
+        width: fit-content;
+        padding: 10px;
+        color: #000;
+        margin-bottom: 10px;
+      }
 
       .speech-bubble-align-right:after{
         content: '';
@@ -123,7 +124,6 @@
 
           if(data.username == socket.username){
             bubble.className = 'speech-bubble-align-right';
-            bubble.style.border-left-color ==  data.color;
           }else{
             bubble.className = 'speech-bubble';
           }

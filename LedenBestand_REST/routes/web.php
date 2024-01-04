@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\soapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,23 @@ Route::get('leden',[MemberController::class,"index"]);
 Route::get('/voegToe', [MemberController::class, "create"]);
 Route::post('/toegevoegdLid', [MemberController::class, "store"]);
 
+Route::get('/ws', function () {
+    return redirect('http://localhost:3000');
+});
 
-Route::get('/{id}', [MemberController::class, "show"]);
+
+
+
+use App\Http\Controllers\AttendanceController;
+Route::get('/soap', [AttendanceController::class, "index"]);
+Route::get('/soapMember',[AttendanceController::class, "memberForm"] );
+Route::get('/soapActivity', [AttendanceController::class, "activityForm"]);
+Route::get('/soapAddActivity', [AttendanceController::class, "addActivityForm"]);
+Route::post('/get-member', [AttendanceController::class, "showMember"]);
+Route::post('/get-activity', [AttendanceController::class, "showActivity"]);
+Route::post('/add-activity', [AttendanceController::class, "NewActivity"]);
+
+
+
+//Route::get('/{id}', [MemberController::class, "show"]);
 

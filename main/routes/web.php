@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\soapController;
+use App\Http\Controllers\WebsocketsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ws', function () {
+    return redirect('http://localhost:3000');
+});
+
 Route::get('/soap', [soapController::class, "doeSOAP"]);
 Route::get('/{name}', [soapController::class, "getAttendance"]);
+
 
