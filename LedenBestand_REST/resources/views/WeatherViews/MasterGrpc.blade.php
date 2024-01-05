@@ -14,11 +14,13 @@
         </div>
         <div class="navbar"> 
             <ul> 
+                <li>|</li>
                 <li><a href="/">Home</a></li> 
+                <li>|</li>
                 <li><a href="/grpc">Find Weather</a></li>
+                <li>|</li>
             </ul> 
         </div>
-        <hr>
         <div class="content"> 
             @yield('pageContents')
         </div>

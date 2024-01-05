@@ -8,6 +8,8 @@
     @csrf
         <label for="getactivityName">Activity name:</label>
         <input type="text" id="getactivityName" name="eventName" required>
-        <button type="submit">Get activity</button>
+        <button type="submit" class="btn">
+                <span class="btn-text">Get activity</span>
+        </button>
     </form>
 @endsection

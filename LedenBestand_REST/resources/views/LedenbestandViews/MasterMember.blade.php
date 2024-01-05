@@ -11,14 +11,17 @@
         <div class="header"> 
             <h1>Welcome to my REST Service</h1> 
         </div>
-        <div class="navbar"> 
-            <ul> 
-                <li><a href="/">Home</a></li> 
-                <li><a href="#">About</a></li> 
-                <li><a href="#">Contact</a></li> 
-            </ul> 
-        </div>
-        <hr>
+            <div class="navbar"> 
+                <ul> 
+                    <li>|</li>
+                    <li><a href="/">Home</a></li> 
+                    <li>|</li>
+                    <li><a href="/leden">Alle leden</a></li>
+                    <li>|</li>
+                    <li><a href="/voegToe"> Voeg nieuw lid toe</a></li>
+                    <li>|</li>
+                </ul> 
+            </div>
         <div class="content"> 
             @yield('pageContents')
         </div>

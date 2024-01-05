@@ -1,0 +1,155 @@
+ /* Header Styles */ 
+ .header {
+    padding: 20px; 
+    text-align: center; 
+    background: #4E8098; 
+    color: black; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+
+/* Navbar Styles */
+.navbar{
+    background-color:#00A9A5;
+    height: 40px;
+    border-top: 2px solid #0B5351; 
+    border-bottom: 2px solid #0B5351
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 10px;
+    color: #0B5351;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+
+/* Form Styles */
+#form {
+    display: flex;
+    margin-bottom: 10px;
+}
+  
+#input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button Styles */
+.btn {
+background-color: #0B5351;
+border: none;
+color: white;
+padding: 8px 16px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 24px;
+}
+
+.btn-text {
+padding-right: 4px;
+}
+
+.btn:hover {
+    background-color: #00A9A5;
+    color: white;
+}
+
+#messages {
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.speech-bubble {
+position: relative;
+background: #f1f1f1;
+border-radius: 1em;
+width: fit-content;
+padding: 10px;
+color: #000;
+margin-bottom: 10px;
+}
+
+.speech-bubble:after{
+content: '';
+position: absolute;
+left: 0;
+top: 50%;
+width: 0;
+height: 0;
+border: 20px solid transparent;
+border-right-color: #f1f1f1;
+border-left: 0;
+border-bottom: 0;
+margin-top: -10px;
+margin-left: -20px;
+}
+
+.speech-bubble-align-right {
+position: absolute;
+right: 50px;
+background: #f1f1f1;
+border-radius: 1em;
+width: fit-content;
+padding: 10px;
+color: #000;
+margin-bottom: 10px;
+}
+
+.speech-bubble-align-right:after{
+content: '';
+position: absolute;
+right: 0;
+top: 50%;
+width: 0;
+height: 0;
+border: 20px solid transparent;
+border-left-color: #f1f1f1;
+border-right: 0;
+border-bottom: 0;
+margin-top: -10px;
+margin-right: -20px;
+}
+
+/* Content Styles */
+.content {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}

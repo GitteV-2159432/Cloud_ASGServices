@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>(c) Gitte </title>
-        <link rel="stylesheet" href="{{URL::asset('css/basic.css')}}"/>
-
-    </head>
-
-    <body>
+@extends("LedenbestandViews\MasterMember")
+@section("pagetitle1", "Nieuw lid")
+@section("pageContents")
     <h2>Voeg nieuw lid toe</h2>
         <form action="/toegevoegdLid" method="post">
             @csrf
@@ -38,6 +30,4 @@
                 <span class="btn-icon">+</span>
             </button>
         </form>
-    </body>
-</html>
-
+@endsection

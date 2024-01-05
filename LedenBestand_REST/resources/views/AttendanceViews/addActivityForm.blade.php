@@ -12,6 +12,8 @@
         <input type="doubleval" id="AddActivityPrice" name="price" required>
         <label for="AddActivityAttendee">attendees:</label>
         <input type="text" id="AddActivityAttendee" name="attendee" required>
-        <button type="submit">Add activity</button>
+        <button type="submit" class="btn">
+                <span class="btn-text">Add activity</span>
+        </button>
     </form>
 @endsection

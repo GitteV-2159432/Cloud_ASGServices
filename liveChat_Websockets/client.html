@@ -1,158 +1,231 @@
 <!-- client.html -->
 <!DOCTYPE html>
 <html>
- <head>
-    <title>Live Chat</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Live Chat - (c) Gitte </title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background-color: #badaf2;
-        }
+       /* Header Styles */ 
+ .header {
+    padding: 20px; 
+    text-align: center; 
+    background: #4E8098; 
+    color: black; 
+  }
 
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+
+/* Navbar Styles */
+.navbar{
+    background-color:#00A9A5;
+    height: 40px;
+    border-top: 2px solid #0B5351; 
+    border-bottom: 2px solid #0B5351
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 10px;
+    color: #0B5351;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+
+/* Form Styles */
+#form {
+    display: flex;
+    margin-bottom: 10px;
+}
   
-        #messages {
-          height: 300px;
-          overflow-y: scroll;
-          margin-bottom: 15px;
-          display: flex;
-          flex-direction: column;
-        }
-  
-        li {
-          margin-bottom: 10px;
-          list-style: none;
-        }
-  
-        #form {
-          display: flex;
-          margin-bottom: 10px;
-        }
-  
-        #input {
-          flex: 1;
-          padding: 5px;
-          border: 1px solid #ddd;
-          border-radius: 5px;
-        }
-  
-        button {
-          padding: 5px 10px;
-          background-color: #0B5351;
-          color: white;
-          border: none;
-          cursor: pointer;
-          border-radius: 5px;
-        }
-  
-        button:hover {
-          background-color: #00A9A5;
-        }
+#input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
-        .speech-bubble {
-        position: relative;
-        background: #f1f1f1;
-        border-radius: 1em;
-        width: fit-content;
-        padding: 10px;
-        color: #000;
-        margin-bottom: 10px;
-      }
+/* Button Styles */
+.btn {
+background-color: #0B5351;
+border: none;
+color: white;
+padding: 8px 16px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 24px;
+}
 
-      .speech-bubble:after{
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 0;
-        height: 0;
-        border: 20px solid transparent;
-        border-right-color: #f1f1f1;
-        border-left: 0;
-        border-bottom: 0;
-        margin-top: -10px;
-        margin-left: -20px;
-      }
+.btn-text {
+padding-right: 4px;
+}
 
-      .speech-bubble-align-right {
-        position: absolute;
-        right: 50px;
-        background: #f1f1f1;
-        border-radius: 1em;
-        width: fit-content;
-        padding: 10px;
-        color: #000;
-        margin-bottom: 10px;
-      }
+.btn:hover {
+    background-color: #00A9A5;
+    color: white;
+}
 
-      .speech-bubble-align-right:after{
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 50%;
-        width: 0;
-        height: 0;
-        border: 20px solid transparent;
-        border-left-color: #f1f1f1;
-        border-right: 0;
-        border-bottom: 0;
-        margin-top: -10px;
-        margin-right: -20px;
-      }
+#messages {
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+li {
+  margin-bottom: 10px;
+  list-style: none;
+}
 
+.speech-bubble {
+top: 10px;
+background: #f1f1f1;
+border-radius: 1em;
+width: fit-content;
+padding: 10px;
+color: #000;
+margin-bottom: 10px;
+}
+
+.speech-bubble:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid black;
+  border-right-color: black;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -10px;
+  margin-left: -20px;
+}
+
+.speech-bubble-align-right {
+margin-left: 600px;
+background: #f1f1f1;
+border-radius: 1em;
+width: fit-content;
+padding: 10px;
+color: #000;
+margin-bottom: 10px;
+}
+
+.speech-bubble-align-right:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-left-color: black;
+  border-right: 0;
+  border-bottom: 0;
+  margin-top: -10px;
+  margin-right: -20px;
+}
+
+/* Content Styles */
+.content {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    align-content: center;
+}
     </style>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        var socket = io();
-        
-        // Get the username from the client when they join
-        var username = prompt("Enter your username:");
-        socket.username = username;
-        socket.emit('user_join', username);
+        document.addEventListener('DOMContentLoaded', () => {
+          var socket = io();
+          
+          // Get the username from the client when they join
+          var username = prompt("Enter your username:");
+          socket.username = username;
+          socket.emit('user_join', username);
 
-        socket.on('connect', () => {
-          console.log('Connected to server!');
-        });
+          socket.on('connect', () => {
+            console.log('Connected to server!');
+          });
 
-        socket.on('message', (data) => {
-          var li = document.createElement('li');
-          var bubble = document.createElement('div');
+          socket.on('message', (data) => {
+            var li = document.createElement('li');
+            var bubble = document.createElement('div');
 
-          if(data.username == socket.username){
-            bubble.className = 'speech-bubble-align-right';
-          }else{
-            bubble.className = 'speech-bubble';
-          }
-          bubble.style.background = data.color;
-          bubble.textContent = data.message;
-          li.appendChild(bubble);
-          document.getElementById('messages').appendChild(li);
-        });
+            if(data.username == socket.username){
+              bubble.className = 'speech-bubble-align-right';
+            }else{
+              bubble.className = 'speech-bubble';
+            }
+            bubble.style.background = data.color;
+            bubble.textContent = data.message;
+            li.appendChild(bubble);
+            document.getElementById('messages').appendChild(li);
+          });
 
-        socket.on('user_join', (username) => {
-          console.log(username);
+          socket.on('user_join', (username) => {
+            console.log(username);
+          });
+          
+          document.getElementById('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            var message = document.getElementById('input').value;
+            socket.emit('message', socket.username + ': ' + message);
+            document.getElementById('input').value = '';
+          });
         });
-        
-        document.getElementById('form').addEventListener('submit', (e) => {
-          e.preventDefault();
-          var message = document.getElementById('input').value;
-          socket.emit('message', socket.username + ': ' + message);
-          document.getElementById('input').value = '';
-        });
-      });
     </script>
- </head>
- <body>
+  </head>
+<body>
+  <div class="header"> 
+    <h1>Welcome to my gRPC Service</h1> 
+  </div>
+  <div class="navbar"> 
+    <ul> 
+      <li>|</li>
+      <li><a href="http://127.0.0.1:8000/">Home</a></li> 
+      <li>|</li>
+    </ul> 
+  </div>
+  <div class="content"> 
     <h1>Welcome to the Live Chat!</h1>
     <ul id="messages"></ul>
     <form id="form">
       <input id="input" type="text" placeholder="Enter your message here" />
-      <button type="submit">Send</button>
+      <button type="submit" class="btn">
+        <span class="btn-text">send</span>
+</button>
     </form>
+  </div>
  </body>
 </html>
 

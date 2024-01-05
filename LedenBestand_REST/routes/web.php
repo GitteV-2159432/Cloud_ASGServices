@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('leden',[MemberController::class,"index"]);
+Route::get('/leden',[MemberController::class,"index"]);
 Route::get('/voegToe', [MemberController::class, "create"]);
 Route::post('/toegevoegdLid', [MemberController::class, "store"]);
 

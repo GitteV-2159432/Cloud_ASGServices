@@ -8,6 +8,8 @@
     @csrf
         <label for="getUserName">User name:</label>
         <input type="text" id="getuserName" name="userName" required>
-        <button type="submit">Get member</button>
+        <button type="submit" class="btn">
+                <span class="btn-text">Get member</span>
+        </button>
     </form>
 @endsection

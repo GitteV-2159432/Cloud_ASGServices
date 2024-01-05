@@ -19,4 +19,4 @@
     @if($member->andereVereniging != NULL)
         Praesidium Bij: {{$member->andereVereniging}}        
     @endif
-@stop
+@endsection
