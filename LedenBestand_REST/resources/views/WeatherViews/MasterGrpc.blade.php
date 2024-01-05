@@ -4,21 +4,18 @@
         <meta charset="UTF-8">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('pagetitle1') - (c) Gitte </title>
-        <link rel="stylesheet" href="{{URL::asset('css/soap.css')}}"/>
+        <link rel="stylesheet" href="{{URL::asset('css/gRPC.css')}}"/>
 
     </head>
 
     <body>
         <div class="header"> 
-            <h1>Welcome to my SOAP service</h1> 
+            <h1>Welcome to my gRPC Service</h1> 
         </div>
         <div class="navbar"> 
             <ul> 
                 <li><a href="/">Home</a></li> 
-                <li><a href="/soap">All members</a></li>
-                <li><a href="/soapMember">Find Member</a></li> 
-                <li><a href="/soapActivity">Find Activity</a></li> 
-                <li><a href="/soapAddActivity">Add Activity</a></li> 
+                <li><a href="/grpc">Find Weather</a></li>
             </ul> 
         </div>
         <hr>
@@ -29,5 +26,3 @@
 
     </body>
 </html>
-
-  

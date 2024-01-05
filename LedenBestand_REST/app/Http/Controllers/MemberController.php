@@ -15,7 +15,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return view("AllMembers")->with("members", Member::all());
+        return view("LedenbestandViews\AllMembers")->with("members", Member::all());
     }
 
     /**
@@ -23,7 +23,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        return view("AddMember");
+        return view("LedenbestandViews\AddMember");
     }
 
     /**
@@ -38,7 +38,7 @@ class MemberController extends Controller
             'andereVereniging'=>'nullable',
         ]);
         $member = Member::create($data);
-        return view("SpecificMember")->with("member", $member);        
+        return view("LedenbestandViews\SpecificMember")->with("member", $member);        
     }
 
     /**
@@ -47,7 +47,7 @@ class MemberController extends Controller
     public function show(string $id)
     {
         $member = Member::find($id);
-        return view("SpecificMember")->with("member", $member);
+        return view("LedenbestandViews\SpecificMember")->with("member", $member);
     }
 
     /**

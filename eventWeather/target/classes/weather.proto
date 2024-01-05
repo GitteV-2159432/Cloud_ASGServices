@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true; 
+package be.cloud;
+
+message WeatherRequest {
+    string date = 1;
+    string location = 2;
+}
+
+message WeatherResponse{
+    string Temp = 1;
+    string neerslag = 2;
+    double windspeed = 3;
+}
+
+service WeatherService {
+    rpc getWeather (WeatherRequest) returns (WeatherResponse);
+}

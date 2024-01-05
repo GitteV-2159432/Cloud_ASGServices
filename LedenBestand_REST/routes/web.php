@@ -40,6 +40,10 @@ Route::post('/get-activity', [AttendanceController::class, "showActivity"]);
 Route::post('/add-activity', [AttendanceController::class, "NewActivity"]);
 
 
+use App\Http\Controllers\WeatherController;
+Route::get('/grpc', [WeatherController::class, "weatherform"]);
+Route::post('/weather', [WeatherController::class, "getWeather"]);
 
-//Route::get('/{id}', [MemberController::class, "show"]);
+
+Route::get('/{id}', [MemberController::class, "show"]);
 
