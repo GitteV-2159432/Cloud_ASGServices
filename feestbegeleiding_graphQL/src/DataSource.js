@@ -2,7 +2,7 @@ const fs = require('fs');
 const csv = require('csv-parser');
 
 function loadData(fileName, onData) {
-    fs.createReadStream('./src/Data/' + fileName + '.csv').pipe(csv())
+    fs.createReadStream('./Data/' + fileName + '.csv').pipe(csv())
     .on('data', (row) => {
         onData(row);
     })
@@ -29,7 +29,6 @@ function loadVerenigingen(){
     const Verenigingen =[];
     loadData("Verenigingen", (row)=>{
         Verenigingen.push({
-            id:parseInt(row.id),
             name: row.name
         });
     })

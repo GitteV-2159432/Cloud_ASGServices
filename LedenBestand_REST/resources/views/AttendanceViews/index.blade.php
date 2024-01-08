@@ -18,10 +18,10 @@
             });
             </script>
             
-            <form action="{{ url('/get-member') }}" method="post" id="getMemberForm">
+            <form action="{{ url('/get-member') }}" method="post" id="getMemberForm{{$member}}">
                 @csrf
                 <input type="hidden" name="userName" value="{{$member}}">
-                <td><a href="javascript:document.getElementById('getMemberForm').submit()">{{$member}}</a></td>
+                <td><a href="javascript:document.getElementById('getMemberForm{{$member}}').submit()">{{$member}}</a></td>
             </form>
             </tr>
         @endforeach

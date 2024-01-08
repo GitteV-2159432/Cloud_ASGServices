@@ -1,8 +1,11 @@
 //https://www.apollographql.com/docs/apollo-server/data/resolvers"
 
-const dataLoader = require("./dataSource");
+const dataLoader = require("./DataSource");
 
 const People = dataLoader.loadPeople();
+if(People == null){
+    console.log("leeg");
+}
 const Verenigingen = dataLoader.loadVerenigingen();
 const Feestbegeleiding = dataLoader.loadFeestbegeleiding();
 
@@ -25,7 +28,7 @@ function filterFeestbegeleidingVereniging(parent, args){
 }
 
 function filterFeestbegeleidingPerson(parent, args){
-    return Feestbegeleiding.find(feestbegeleiding =>feestbegeleiding.firstPerson == args.PersonName) //|| Feestbegeleiding.find(feestbegeleiding =>feestbegeleiding.firstPerson ==args.PersonName);
+    return Feestbegeleiding.find(feestbegeleiding =>feestbegeleiding.firstPerson == args.name) //|| Feestbegeleiding.find(feestbegeleiding =>feestbegeleiding.firstPerson ==args.PersonName);
 }
 
 const personResolver = {

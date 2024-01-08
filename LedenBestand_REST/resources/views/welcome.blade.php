@@ -95,7 +95,7 @@
                 <li>|</li>
                 <li><a href="#">Nieuwsbrief</a></li>
                 <li>|</li>
-                <li><a href="#">grapQL</a></li>
+                <li><a href="/events">Feestbegeleiding</a></li>
                 <li>|</li>
             </ul> 
         </div>
@@ -128,13 +128,13 @@
         <div class="box">
             <h2>Service 5</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="service4.html">Go to Service 4</a>
+            <a href="service4.html">Go to Service 5</a>
         </div>
 
         <div class="box">
-            <h2>Service 6</h2>
+            <h2>Feestbegeleiding</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="service4.html">Go to Service 4</a>
+            <a href="/events">Go to Service 6</a>
         </div>
     </div>
 </body>

@@ -7,7 +7,7 @@ const { ApolloServer } = require('@apollo/server');
 const { startStandaloneServer } = require('@apollo/server/standalone');
 
 const resolvers = require('./Resolvers');
-const typeDefs = readFileSync('./src/Schema.graphql', 'utf-8');
+const typeDefs = readFileSync('./Schema.graphql', 'utf-8');
 
 const server = new ApolloServer({
   typeDefs,

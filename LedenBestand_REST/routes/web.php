@@ -44,6 +44,18 @@ use App\Http\Controllers\WeatherController;
 Route::get('/grpc', [WeatherController::class, "weatherform"]);
 Route::post('/weather', [WeatherController::class, "getWeather"]);
 
+use App\Http\Controllers\FeestbegeleidingController;
+Route::get('/people', [FeestbegeleidingController::class, "peopleView"]);
+Route::get('/associations',[FeestbegeleidingController::class, "associationView"]);
+Route::get('/events', [FeestbegeleidingController::class, "eventView"]);
+Route::get('/addPerson', [FeestbegeleidingController::class, "personForm"]);
+Route::post('/addedPerson', [FeestbegeleidingController::class, "createPerson"]);
+Route::get('/addEvent', [FeestbegeleidingController::class, "eventForm"]);
+Route::post('/addedEvent', [FeestbegeleidingController::class, "createEvent"]);
+Route::get('/addAssociation', [FeestbegeleidingController::class, "associationForm"]);
+Route::post('/addedAssociation', [FeestbegeleidingController::class, "createAssociation"]);
+Route::post('/get-association', [FeestbegeleidingController::class, "showAssociation"]);
+Route::post('/get-person', [FeestbegeleidingController::class, "showPerson"]);
 
 Route::get('/{id}', [MemberController::class, "show"]);
 

@@ -15,7 +15,7 @@ type Query{
     filterFeestbegeleidingVereniging(verenigingName: String): [Feestbegeleiding]!
 
     "Get all events where a specific Person did feestbegeleiding"
-    filterFeestbegeleidingPerson(personName: String): [Feestbegeleiding]!
+    filterFeestbegeleidingPerson(name: String): [Feestbegeleiding]!
 }
 
 
@@ -32,7 +32,6 @@ type Vereniging{
 }
 
 type Feestbegeleiding{
-    id: ID!
     nameEvent: String!
     firstShift: Person!
     secondShift: Person!

@@ -30,7 +30,7 @@ def on_message(client, userdata, message, tmp=None):
     if message.qos == 0:
        print("Alles onder controle")
 
-    newsletter = message.payload
+    newsletter = str(message.payload.decode("utf-8"))
     print(newsletter)
 
 
