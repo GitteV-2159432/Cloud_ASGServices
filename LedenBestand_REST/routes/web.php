@@ -28,8 +28,6 @@ Route::get('/ws', function () {
 });
 
 
-
-
 use App\Http\Controllers\AttendanceController;
 Route::get('/soap', [AttendanceController::class, "index"]);
 Route::get('/soapMember',[AttendanceController::class, "memberForm"] );
@@ -56,6 +54,11 @@ Route::get('/addAssociation', [FeestbegeleidingController::class, "associationFo
 Route::post('/addedAssociation', [FeestbegeleidingController::class, "createAssociation"]);
 Route::post('/get-association', [FeestbegeleidingController::class, "showAssociation"]);
 Route::post('/get-person', [FeestbegeleidingController::class, "showPerson"]);
+
+use App\Http\Controllers\UpdatesController;
+Route::get('/updates', [UpdatesController::class, "subscribe"]);
+Route::get('/sendUpdate', [UpdatesController::class, "updateForm"]);
+Route::post('/sendtoMQTT', [UpdatesController::class, "sendUpdate"]);
 
 Route::get('/{id}', [MemberController::class, "show"]);
 

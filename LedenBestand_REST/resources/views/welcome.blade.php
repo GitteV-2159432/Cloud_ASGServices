@@ -93,7 +93,7 @@
                 <li>|</li>
                 <li><a href="/grpc">Weerbericht</a></li>
                 <li>|</li>
-                <li><a href="#">Nieuwsbrief</a></li>
+                <li><a href="/updates">Updates</a></li>
                 <li>|</li>
                 <li><a href="/events">Feestbegeleiding</a></li>
                 <li>|</li>
@@ -126,9 +126,9 @@
         </div>
 
         <div class="box">
-            <h2>Service 5</h2>
+            <h2>Updates</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="service4.html">Go to Service 5</a>
+            <a href="/updates">Go to Service 5</a>
         </div>
 
         <div class="box">
