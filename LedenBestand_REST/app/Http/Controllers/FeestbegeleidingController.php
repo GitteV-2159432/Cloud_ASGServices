@@ -48,6 +48,12 @@ class FeestbegeleidingController extends Controller
             query getEventBypersonID($personID:Int!){
                 getEventBypersonID(personID:$personID){
                     nameEvent
+                    firstShift{
+                        association
+                    }
+                    secondShift{
+                        association
+                    }
                 }
             }
         GQL;

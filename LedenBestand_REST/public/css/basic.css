@@ -19,7 +19,7 @@ br{
     background-color:#00A9A5;
     height: 40px;
     border-top: 2px solid #0B5351; 
-    border-bottom: 2px solid #0B5351
+    border-bottom: 2px solid #0B5351;
 }
 
 .navbar ul {
@@ -44,7 +44,37 @@ br{
     padding: 10px 20px;
 }
 
+/*Dropdown Styles*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+.dropbtn {
+    background-color: #00A9A5;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00A9A5;
+    min-width: 150px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 16px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 
 /* Content Styles */

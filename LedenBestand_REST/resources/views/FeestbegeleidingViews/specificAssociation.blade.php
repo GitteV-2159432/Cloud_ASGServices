@@ -1,13 +1,13 @@
 @extends("FeestbegeleidingViews\MasterGraphQL")
 @section("pagetitle","Feestbegeleiding service")
 @section("pageContents")
-    <h1 class="pagetitle">{{$association}} members:</h1>
+    <h1 class="pagetitle">{{$association}} Leden:</h1>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th> 
+                <th>Voornaam</th>
+                <th>Achternaam</th> 
             </tr>
         </thead> 
         <tbody> 

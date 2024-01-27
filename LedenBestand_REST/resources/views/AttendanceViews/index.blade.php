@@ -1,11 +1,15 @@
 @extends("AttendanceViews\MasterSoap")
-@section("pagetitle1","Attendance service")
+@section("pagetitle","Aanwezigheids service")
 @section("pageContents")
-
-<h2>Members</h2>
-<table id="members">
+<h2 class = "pagetitle">Leden</h2>
+<a href="/soapAddMember" class="btn">
+    <span class="btn-text">Nieuw Lid</span>
+    <span class="btn-icon">+</span>
+</a>
+<input typ="text" id="search" onkeyup="search()" placeholder="Zoek lid">
+<table id="people">
         <tr class = "header">
-            <th>Name</th>
+            <th>Naam</th>
         </tr>
 
         @foreach ($members as $member)
@@ -25,5 +29,6 @@
             </form>
             </tr>
         @endforeach
-    </table>
+</table>
+<script src="{{asset('/js/soapSearchbar.js')}}"></script>
 @endsection

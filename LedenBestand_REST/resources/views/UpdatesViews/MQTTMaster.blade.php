@@ -2,21 +2,33 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>@yield('pagetitle1') - (c) Gitte </title>
+        <title>@yield('pagetitle') - (c) Gitte </title>
         <link rel="stylesheet" href="{{URL::asset('css/mqtt.css')}}"/>
 
     </head>
 
     <body>
         <div class="header"> 
-            <h1>Welcome to my MQTT Service</h1> 
+            <h1>Verenigings updates: Powered by MQTT</h1> 
         </div>
             <div class="navbar"> 
                 <ul> 
                     <li>|</li>
                     <li><a href="/">Home</a></li> 
                     <li>|</li>
-                    <li><a href="/updates">See updates</a></li>
+                    <li><a href="/updates">Updates</a></li>
+                    <li>|</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="/leden">Ledenbestand</a>
+                            <a href="/ws">Live Chat</a>
+                            <a href="/soap">Aanwezigheidsregistratie</a>
+                            <a href="/grpc">Weerbericht</a>
+                            <a href="/updates">Updates</a>
+                            <a href="/events">Feestbegeleiding</a>
+                        </div>
+                    </li>
                     <li>|</li>
                 </ul> 
             </div>

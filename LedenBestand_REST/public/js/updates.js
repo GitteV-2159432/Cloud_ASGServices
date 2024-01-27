@@ -10,6 +10,8 @@ const existingID = {};
 client.on('connect', function () {
     console.log('Connected to MQTT Broker');
     client.subscribe('update');
+    addsamples();
+    displayUpdates();
 });
 
 client.on('message', function (topic, msg) {
@@ -19,14 +21,14 @@ client.on('message', function (topic, msg) {
     var title = updateParts[1];
     var message = updateParts[3];
 
-    const updateID = generateID(); // Generate a unique ID for each update
+    const updateID = generateID();
     console.log('Received message:', topic, update, updateID);
     console.log(title);
     console.log(message);
 
-    const timestamp = new Date().toLocaleString();
+    const time = new Date().toLocaleString();
 
-    updates.push({id: updateID, title: title, message: message, timestamp: timestamp});
+    updates.push({id: updateID, title: title, message: message, time: time});
     displayUpdates();
 });
 
@@ -56,7 +58,7 @@ function displayUpdates(){
 
         const timeDiv = document.createElement('div');
         timeDiv.className = 'updateTime';
-        timeDiv.textContent = message.timestamp;
+        timeDiv.textContent = message.time;
 
         updateDiv.appendChild(titleDiv);
         updateDiv.appendChild(messageDiv);
@@ -65,4 +67,18 @@ function displayUpdates(){
 
         list.insertBefore(updateDiv, list.firstChild);
     });
+}
+
+function addsamples(){
+    var updateID = generateID();
+    var title ="Nieuw academiejaar";
+    var message = "Het nieuwe academiejaar is weer begonnen! Welkom!";
+    var time = new Date(2023, 9, 18, 10, 49, 48).toLocaleString();
+    updates.push({id: updateID, title: title, message: message, time: time});
+
+    var updateID = generateID();
+    var title ="Examens";
+    var message = "Veel succes met de examens allemaal!";
+    var time = new Date(2024, 1, 13, 8, 6, 17).toLocaleString();
+    updates.push({id: updateID, title: title, message: message, time: time});
 }

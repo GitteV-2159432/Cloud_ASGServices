@@ -1,5 +1,5 @@
 @extends("UpdatesViews\MQTTMaster")
-@section("pagetitle1","Updates")
+@section("pagetitle","Updates")
 @section("pageContents")
 
     <div class="container" id ="updates" >

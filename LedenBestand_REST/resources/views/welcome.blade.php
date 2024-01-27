@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Home Screen</title>
+    <title>Website Cloud</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,6 +27,7 @@
         }
 
         .box {
+            display: flex; 
             background-color: #97bbcc;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -34,15 +35,23 @@
             width: 400px;
             margin: 10px;
             text-align: center;
+            flex-direction: column;
+        }
+
+        .box p {
+            margin-top: 0px;
+            margin-bottom: 5px;
         }
 
         .box a {
-            color: #333;
+            color: #383838;
             text-decoration: none;
+            margin-top: auto;
+            text-decoration: underline;
         }
 
         .box a:hover {
-            text-decoration: underline;
+            color: #4E8098;
         }
 
         /* Navbar Styles */
@@ -78,7 +87,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Welcome to Our Website</h1>
+        <h1>Welkom op mijn website</h1>
     </div>
     <div class="navbar"> 
             <ul> 
@@ -103,38 +112,38 @@
     <div class="container">
         <div class="box">
             <h2>Ledenbestand</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="/leden">Go to Service 1</a>
+            <p>In deze service vindt je het ledenbestand van de fictieve vereniging. Je kan leden toevoegen, een tabel van leden zien en de informatie van alle leden apart bekijken.</p>
+            <a href="/leden">Ga naar Ledenbestand</a>
         </div>
 
         <div class="box">
             <h2>Live chat</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="/ws">Go to Service 2</a>
+            <p>Deze service is een live chat. Na het ingeven van je naam kan je deze chat gebruiken. Je chat met een andere persoon (een ander tablad). </p>
+            <a href="/ws">Ga naar Live chat</a>
         </div>
 
         <div class="box">
             <h2>Aanwezigheidsregistratie</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="/soap">Go to Service 3</a>
+            <p>Deze service dient voor Aanwezigheidsregistratie. Je kan een evenement toevoegen, met een datum, prijs, en naam. Bij elke activiteit kan je ook een persoon die aanwezig was ingeven.</p>
+            <a href="/soap">Ga naar Aanwezigheidsregistratie</a>
         </div>
 
         <div class="box">
             <h2>Weerbericht</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="/grpc">Go to Service 4</a>
+            <p>In deze service kan je na het ingeven van de datum en locatie van je evenement het weerbericht opvragen voor dit evenement.</p>
+            <a href="/grpc">Ga naar Weerbericht</a>
         </div>
 
         <div class="box">
             <h2>Updates</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="/updates">Go to Service 5</a>
+            <p>In deze service kan je updates, gestuurd door bv. het praesidium zien.</p>
+            <a href="/updates">Ga naar Updates</a>
         </div>
 
         <div class="box">
             <h2>Feestbegeleiding</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elit lectus, lobortis ac justo non, pulvinar tempor ante.</p>
-            <a href="/events">Go to Service 6</a>
+            <p>Deze service dient voor het bijhouden welke verenigingen en personen feestbegeleiding gedaan hebben op een evenement.</p>
+            <a href="/events">Ga naar Feestbegeleiding</a>
         </div>
     </div>
 </body>

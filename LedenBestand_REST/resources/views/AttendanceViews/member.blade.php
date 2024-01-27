@@ -1,9 +1,15 @@
 @extends("AttendanceViews\MasterSoap")
-@section("pagetitle1","Member $name")
+@section("pagetitle","Lid $name")
 @section("pageContents")
-    <h2>Member: {{$name}}</h2>
-    
-    <p>Attendence percentage: {{$percentage}}%</p>
-    <p>Amount of activities attended: {{$attendedActivities}}</p>
+    <div class="container">
+        <h1 class="naam">Lid: {{$name}}</h1>
+        <br/>Aanwezigheids percentage: {{$percentage}}%
+        <br/>Aantal activiteiten aanwezig: {{$attendedActivities}}
+        
+        <br/>
+        @if($percentage >= 70)
+            <div class="stemrecht"> Deze persoon heeft stemrecht</div>        
+        @endif
+    </div>
 
 @endsection

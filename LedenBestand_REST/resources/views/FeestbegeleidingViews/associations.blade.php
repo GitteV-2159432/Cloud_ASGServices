@@ -3,7 +3,7 @@
 @section("pageContents")
 
 <a href="/addAssociation" class="btn">
-    <span class="btn-text">New Association</span>
+    <span class="btn-text">Nieuwe vereniging</span>
     <span class="btn-icon">+</span>
 </a>
 
@@ -11,7 +11,7 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Vereniging Name</th>
+            <th>verenigingsnaam</th>
         </tr>
     </thead> 
     <tbody> 

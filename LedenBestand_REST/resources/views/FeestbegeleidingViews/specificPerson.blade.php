@@ -3,20 +3,24 @@
 @section("pageContents")
 
     <div class="container">
-        <h1 class="pagetitle">{{$firstName}} {{$lastName}}</h1>
+        <h1 class="naam">{{$firstName}} {{$lastName}}</h1>
         <br/>ID: {{$personID}}
-        <br/>Association: {{$association}}
+        <br/>Vereniging: {{$association}}
     </div>
     <table>
         <thead>
             <tr>
-                <th>Event name</th>
+                <th>Evenementnaam</th>
+                <th>Eerste Shift</th>
+                <th>Tweede Shift</th>
             </tr>
         </thead> 
         <tbody> 
             <?php foreach ($events as $event): ?> 
                 <tr> 
                     <td><?php echo $event->nameEvent; ?></td> 
+                    <td><?php echo $event->firstShift->association; ?></td>
+                    <td><?php echo $event->secondShift->association; ?></td>
                 </tr> 
             <?php endforeach; ?> 
         </tbody>

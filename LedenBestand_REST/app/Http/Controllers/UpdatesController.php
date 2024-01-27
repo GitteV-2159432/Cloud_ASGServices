@@ -22,7 +22,7 @@ class UpdatesController extends Controller
     public function sendUpdate(Request $request){
         $title = $request->input('title');
         $message = $request->input('text');
-        $url = "http://localhost:5000/send_update";
+        $url = "http://127.0.1:3000/send_update";
         $data = array(
             'title' => $title,
             'message' => $message

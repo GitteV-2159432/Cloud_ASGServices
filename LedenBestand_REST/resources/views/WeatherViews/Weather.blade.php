@@ -1,11 +1,11 @@
 @extends("WeatherViews\MasterGrpc")
-@section("pagetitle1","Event weather service")
+@section("pagetitle","Evenement weerbericht service")
 @section("pageContents")
     <div class="container">
         @if($weatherData)
             <div class="weather-card">
                     <div class="location">{{$weatherData['location'] }}</div>
-                    <div class="date">Date: {{$formattedDate}}</div>
+                    <div class="date">Datum: {{$formattedDate}}</div>
                     <div class="details">
                         <div class="detail">Neerslag: {{ $weatherData['neerslag'] }}</div>
                         <div class="detail">Temperatuur: {{ $weatherData['temp'] }}</div>

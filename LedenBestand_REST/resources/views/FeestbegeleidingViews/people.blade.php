@@ -3,7 +3,7 @@
 @section("pageContents")
 
 <a href="/addPerson" class="btn">
-    <span class="btn-text">New person</span>
+    <span class="btn-text">Niewe persoon</span>
     <span class="btn-icon">+</span>
 </a>
 
@@ -11,9 +11,9 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th> 
-            <th>Association</th>
+            <th>Voornaam</th>
+            <th>Achternaam</th> 
+            <th>Vereniging</th>
         </tr>
     </thead> 
     <tbody> 

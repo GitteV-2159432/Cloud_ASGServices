@@ -1,5 +1,5 @@
 @extends("WeatherViews\MasterGrpc")
-@section("pagetitle1","Event weather service")
+@section("pagetitle1","Weerbericht niet beschikbaar")
 @section("pageContents")
     <div class="container">
             <div class="error-card">

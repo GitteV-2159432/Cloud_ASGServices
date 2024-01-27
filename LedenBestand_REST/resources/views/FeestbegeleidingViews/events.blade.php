@@ -3,18 +3,18 @@
 @section("pageContents")
 
 <a href="/addEvent" class="btn">
-    <span class="btn-text">New Event</span>
+    <span class="btn-text">Nieuw evenement</span>
     <span class="btn-icon">+</span>
 </a>
 
 <table>
     <thead>
         <tr>
-            <th>Eventname</th>
-            <th>First shift Person</th> 
-            <th>First shift association</th>
-            <th>second shift Person</th> 
-            <th>second shift association</th>
+            <th>Evenement naam</th>
+            <th>Eerste shift persoon</th> 
+            <th>Eerste shift vereniging</th>
+            <th>Tweede shift persoon</th> 
+            <th>Tweede shift vereniging</th>
         </tr>
     </thead> 
     <tbody> 

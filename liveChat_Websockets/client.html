@@ -28,7 +28,10 @@
     background-color:#00A9A5;
     height: 40px;
     border-top: 2px solid #0B5351; 
-    border-bottom: 2px solid #0B5351
+    border-bottom: 2px solid #0B5351;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar ul {
@@ -37,7 +40,7 @@
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-self: center;
     height: 100%;
 }
 
@@ -45,12 +48,43 @@
     display: inline;
     margin-right: 10px;
     color: #0B5351;
+    line-height: 40px;
 }
 
 .navbar li a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
+}
+
+/*Dropdown Styles*/
+
+.dropbtn {
+    background-color: #00A9A5;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    line-height: 40px !important;;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00A9A5;
+    min-width: 150px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 16px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 
@@ -207,22 +241,33 @@ margin-bottom: 10px;
   </head>
 <body>
   <div class="header"> 
-    <h1>Welcome to my gRPC Service</h1> 
+    <h1>Livechat: Powered by Websockets</h1> 
   </div>
   <div class="navbar"> 
     <ul> 
       <li>|</li>
       <li><a href="http://127.0.0.1:8000/">Home</a></li> 
       <li>|</li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Services</a>
+        <div class="dropdown-content">
+            <a href="http://127.0.0.1:8000/leden">Ledenbestand</a>
+            <a href="http://127.0.0.1:8000/ws">Live Chat</a>
+            <a href="http://127.0.0.1:8000/soap">Aanwezigheidsregistratie</a>
+            <a href="http://127.0.0.1:8000/grpc">Weerbericht</a>
+            <a href="http://127.0.0.1:8000/updates">Updates</a>
+            <a href="http://127.0.0.1:8000/events">Feestbegeleiding</a>
+        </div>
+    </li>
+    <li>|</li>
     </ul> 
   </div>
   <div class="content"> 
-    <h1>Welcome to the Live Chat!</h1>
     <ul id="messages"></ul>
     <form id="form">
-      <input id="input" type="text" placeholder="Enter your message here" />
+      <input id="input" type="text" placeholder="Typ hier uw bericht" />
       <button type="submit" class="btn">
-        <span class="btn-text">send</span>
+        <span class="btn-text">Verstuur</span>
 </button>
     </form>
   </div>

@@ -28,7 +28,7 @@ class WeatherController extends Controller
     } 
 
     private function getWeatherData($date, $location){
-        $url = "http://localhost:5000/weather?date=$date&location=$location";
+        $url = "http://localhost:5002/weather?date=$date&location=$location";
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_RETURNTRANSFER => 1,
@@ -43,5 +43,6 @@ class WeatherController extends Controller
         $weatherData = json_decode($response, true);
         
         return $weatherData;
+        
     }
 }

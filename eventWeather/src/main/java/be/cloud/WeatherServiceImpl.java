@@ -39,7 +39,7 @@ public class WeatherServiceImpl extends WeatherServiceImplBase {
             }
             connection.disconnect();
 
-            //-----Zet JSON om naar nuttige data-----
+            //-----Zet JSON om naar nuttige data-----//
             JSONObject jsonData = new JSONObject(data);
             // get temp
             double temp = jsonData.getJSONObject("main").getDouble("temp");

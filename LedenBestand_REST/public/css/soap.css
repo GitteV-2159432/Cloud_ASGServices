@@ -6,9 +6,6 @@
     color: black; 
 }
 
-a{
-    text-decoration: none;
-}
 
 /* Navbar Styles */
 .navbar{
@@ -17,7 +14,6 @@ a{
     border-top: 2px solid #0B5351; 
     border-bottom: 2px solid #0B5351
 }
-
 .navbar ul {
     list-style-type: none;
     padding: 0;
@@ -27,61 +23,89 @@ a{
     align-items: center;
     height: 100%;
 }
-
 .navbar li {
     display: inline;
     margin-right: 10px;
     color: #0B5351;
 }
-
 .navbar li a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
 }
 
-/* Content Styles */
-.content {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
+/*Dropdown Styles*/
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
+
+.dropbtn {
+    background-color: #00A9A5;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00A9A5;
+    min-width: 150px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 16px;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
 
 /* Table Styles */
 table {
     width: 100%;
     border-collapse: collapse;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 th, td {
     padding: 8px;
     text-align: left;
     border: 1px solid #dddddd;
 }
-
 th {
     background-color: #90C2E7;
     color:black;
 }
-
 td{
     background-color: white;
 }
-
 tr:hover {
     background-color: #f5f5f5;
 }
+
+
 
 /* Form Styles */
 .form-group {
 margin-bottom: 1rem;
 }
-
 label {
 display: block;
 margin-bottom: 0.5rem;
 }
-
 input[type="text"]{
 width: 50%;
 padding: 0.5rem;
@@ -89,6 +113,8 @@ font-size: 1rem;
 border: 1px solid #ccc;
 border-radius: 3px;
 }
+
+
 
 /* Button Styles */
 .btn {
@@ -103,17 +129,15 @@ font-size: 16px;
 margin: 4px 2px;
 cursor: pointer;
 border-radius: 24px;
+margin-bottom: 10px;
 }
-
 .btn-text {
 padding-right: 4px;
 }
-
 .btn-icon {
 font-size: 24px;
 vertical-align: middle;
 }
-
 .btn:hover {
     background-color: #00A9A5;
     color: white;
@@ -121,7 +145,60 @@ vertical-align: middle;
 
 
 
+/* Content Styles */
+.content {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4; 
 }
+
+a{
+    text-decoration: none;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.pagetitle {
+    color: #00A9A5;
+    margin-bottom: 10px;
+}
+
+.naam {
+    color: #00A9A5;
+    margin-bottom: 5px;
+}
+
+.stemrecht {
+    color: #90e190;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.notFound {
+    color: #ff7f7f;
+    margin-bottom: 10px;
+}
+
+#search{
+    width: 20%;
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px;
+    text-align: left;
+    float: right;
+    }

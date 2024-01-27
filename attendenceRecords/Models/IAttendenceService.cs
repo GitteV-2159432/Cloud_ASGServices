@@ -22,9 +22,16 @@ namespace Models{
       void AddActivity(string eventName, DateTime date, double price, string attendee);
 
       [OperationContract]
+      void AddActivityToPerson(string personName,string eventName);
+      
+      [OperationContract]
+      void AddPerson(string name);
+
+      [OperationContract]
       List<string> GetMembers();
 
-      /*[OperationContract]
-      List<Activity> GetActivities();  */
+
+      [OperationContract]
+      List<Activity> GetActivities();
     }
 }

@@ -1,10 +1,12 @@
 const graphql= require('graphql');
 const {GraphQLObjectType, GraphQLSchema,GraphQLList, GraphQLInt, GraphQLString}  = graphql;
+
+//https://www.mockaroo.com/
 const personData = require('./Data/People.json');
 const associationData = require('./Data/Associations.json');
 const eventData = require('./Data/Events.json');
 
-
+//https://www.youtube.com/watch?v=Dr2dDWzThK8
 const PersonType = require('./TypeDefs/PersonType');
 const AssociationType = require('./TypeDefs/AssociationType');
 const EventType = require('./TypeDefs/EventType');
