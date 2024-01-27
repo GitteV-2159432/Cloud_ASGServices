@@ -7,18 +7,19 @@
 ### 1. REST
 **Ledenbestand** 
 Beschrijving:
-Een REST API dat een ledenbestand representeerd, je kan leden opzoeken op voor en achternaam. Wanneer je op een lid klik kom je op een andere pagina waar je dit lid zijn gegevens kan terugvinden.
+Een REST API die een ledenbestand representeerd, je kan leden opzoeken op voor en achternaam. Wanneer je op een lid klik kom je op een andere pagina waar je dit lid zijn gegevens kan terugvinden.
 
 ### 2. SOAP
 **AttendendeRecords** 
 Beschrijving:
-Een SOAP service waarin ja per evenement kan opvragen wie er aanwezig was. Je kan ook voor elke persoon opvragen op welke activiteiten ze aanwezig waren en op hoeveel procent van activiteiten ze aanwezig waren.
+Een SOAP service waarin je per evenement kan opvragen wie er aanwezig was. Je kan ook voor elke persoon opvragen op welke activiteiten ze aanwezig waren en op hoeveel procent van activiteiten ze aanwezig waren.
 
 ### 3. GraphQL
 **Feestbegeleiding** 
 Beschrijving:
 Een GraphQL-service waarin je voor verschillende evenementen kan zoeken wie er feestbegeleiding heeft gedaan, je kan ook per vereniging/persoon kijken op welke evenementen ze feestbegeleiding hebben gedaan.
 
+### 4. gRPC
 **EventWeather** 
 Beschrijving:
 Een gRPC-service waarin je bij het opgeven van de datum en de locatie van je evenement het weerbericht te zien krijgt.
@@ -31,5 +32,5 @@ Een WebSocket-service waarin je kan chatten met elkaar.
 ### 6. MQTT
 **Newsletter** 
 Beschrijving:
-Een MQTT service waarmee de 'wekelijkse' mail/ nieuwsbrief verzonden wordt naar alle personen die geaboneerd zijn op deze nieuwsbrief.
+Een MQTT service waarmee de updates worden verzonden naar iedereen die gesubscribed is op dit onderwerp.
 
